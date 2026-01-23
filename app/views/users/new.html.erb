@@ -1,5 +1,36 @@
 <h1>Create a new user!</h1>
+<%= form_with model: @user do |form| %>
+<div>
+    <%= form.label :username, "Your username goes here: "%>
+    <%= form.text_field :username, value: "random_user999"%>
+</div>
+<div>
+    <%= form.label :email%>
+    <%= form.email_field :email, placeholder: "youremail@adress.com"%>
+</div>
+<div>
+    <%= form.label :password%>
+    <%= form.password_field :password%>
+</div>
 
+    <%= form.submit %>
+<%end%>
+
+<%# <%= form_tag("/users", method: "post") do 
+    <%= label_tag(:username, "Username: ") 
+    <%= text_field_tag(:username) 
+    
+    <%= label_tag(:email, "Email: ") 
+    <%= email_field_tag(:email) 
+
+    <%= label_tag(:password, "Password: ") 
+    <%= password_field_tag(:password)
+
+    <%= submit_tag("Submit")
+<% end 
+ %>
+
+<%#
 <form action="/users" method="post" accept- charset="UTF-8">
     <label for="username">username:</label>
     <input type="text" name="user[username]" id="username">
@@ -10,7 +41,9 @@
     <label for="password">Password:</label>
     <input type="password" name="user[password]" id="password">
 
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    This line is not closing code for form_authenticity_token because it closes the comment
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token ">
 
     <button type="submit">Submit</button>
 </form>
+%>
